@@ -166,6 +166,7 @@
 	fragment@2 {
 		target = <&i2c2>;
 		__overlay__ {
+			pinctrl-0 = <>;
 			status = "disabled";
 		};
 	};
@@ -208,17 +209,17 @@
 	fragment@5 {
 		target = <&gpio1>;
 		__overlay__ {
-			emmc_rst {
-				gpio-hog;
-				gpio = <20 GPIO_ACTIVE_LOW>;
-				output-low;
-				line-name = "emmc_resetN";
-			};
 			eeprom_disable {
 				gpio-hog;
 				gpio = <16 GPIO_ACTIVE_LOW>;
 				output-low;
 				line-name = "eeprom_disable";
+			};
+			emmc_rst {
+				gpio-hog;
+				gpio = <20 GPIO_ACTIVE_LOW>;
+				output-low;
+				line-name = "emmc_resetN";
 			};
 			ls_buf_en {
 				gpio-hog;
